@@ -30,6 +30,15 @@ public class BestTimeToBuyAndSellStockTest {
         Assert.assertEquals(2,s.maxProfit(arr)); // IMP
     }
 
+    @Test
+    public void test4() {
+
+        int [] arr = new int[] {2,3,4,1};
+
+        Assert.assertEquals(2,s.maxProfit(arr)); // IMP
+    }
+
+
 
 
 

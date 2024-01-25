@@ -13,12 +13,10 @@ public class BestTimeToBuyAndSellStock {
     //i=4 , min=1,max =6
     //i=5 , min=1,max-6
 
-    //[2,4,1]
+    //[2,4,1] imp case
     //i=0, min=2,max=2,profit =0
-    //i=1, min=2,max=4,profit =2
+    //i=1, min=2,max=4,profit =[2]
     //i=2, min=1,max=0,profit =-1
-    //i
-    //i
 
 
     public int maxProfit(int[] prices) {
@@ -31,13 +29,14 @@ public class BestTimeToBuyAndSellStock {
             if (price < min) {
                 min = price;
                 //when ever we find new min, reset max, coz we need to think about getting future max
-                max = Integer.MIN_VALUE;
+                max = 0;
             }
 
             if (price > max) {
                 max = price;
             }
 
+            //each day we are comparing what max profit can be made
             profit = Math.max(profit, max - min);
         }
 
