@@ -35,6 +35,16 @@ public class SortColorsTest {
         Assert.assertArrayEquals(Arrays.stream(( new int[] {2,0,2})).sorted().toArray(),arr);
     }
 
+    @Test
+    public void test4() {
+
+        int [] arr = new int[] {2,1,2};
+
+        s.sortColors(arr);
+
+        Assert.assertArrayEquals(Arrays.stream(( new int[] {2,1,2})).sorted().toArray(),arr);
+    }
+
 
 
 
