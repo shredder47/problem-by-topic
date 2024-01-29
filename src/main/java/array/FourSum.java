@@ -2,10 +2,21 @@ package array;
 
 import java.util.*;
 
+//https://leetcode.com/problems/4sum/description/
+
+/*
+        Example 1:
+        Input: nums = [1,0,-1,0,-2,2], target = 0
+        Output: [[-2,-1,1,2],[-2,0,0,2],[-1,0,0,1]]
+
+        Example 2:
+        Input: nums = [2,2,2,2,2], target = 8
+        Output: [[2,2,2,2]]
+ */
+
 public class FourSum {
 
     //    Input: nums = [-2,-1,0,0,1,2], target = 0
-
     //    Output: [[-2,-1,1,2],[-2,0,0,2],[-1,0,0,1]]
 
     public List<List<Integer>> fourSum(int[] nums, int target) {
