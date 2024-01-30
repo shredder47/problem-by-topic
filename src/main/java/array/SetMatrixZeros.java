@@ -1,6 +1,9 @@
 package array;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
 
 //https://leetcode.com/problems/set-matrix-zeroes/description/
 public class SetMatrixZeros {

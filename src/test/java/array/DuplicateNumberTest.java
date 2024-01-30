@@ -1,9 +1,6 @@
 package array;
 
-import org.junit.Assert;
 import org.junit.Test;
-
-import java.util.Arrays;
 
 public class DuplicateNumberTest {
     DuplicateNumber s = new DuplicateNumber();

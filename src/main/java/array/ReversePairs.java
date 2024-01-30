@@ -1,8 +1,6 @@
 package array;
 
 
-import java.util.ArrayList;
-
 //https://leetcode.com/problems/reverse-pairs/description/
 public class ReversePairs {
 

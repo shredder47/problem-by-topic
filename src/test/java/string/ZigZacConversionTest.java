@@ -2,7 +2,6 @@ package string;
 
 import org.junit.Assert;
 import org.junit.Test;
-import string.ZigZacConversion;
 
 public class ZigZacConversionTest {
     ZigZacConversion s = new ZigZacConversion();
