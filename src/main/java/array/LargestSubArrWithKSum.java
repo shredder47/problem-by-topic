@@ -18,9 +18,9 @@ Case 1, where we will use hashmap to get sum = 0
 target = 0
         0       1       2       3       4       5       6       7   <- Index
         15      -2      2       -8      1       7       10      23  <- values
-        15      13      15      7       8       15      25      48  <- cumSum
+        15      13     {15}     7       8       15      25      48  <- cumSum
 
-        |----------------|
+        |----------------|                                                     Note: we are not going to put { } value as we are interested in longest
             15      0
         ++++++++----------
         |----------------------------------------|
@@ -34,7 +34,7 @@ target = 0
  cumSum=           10      25     [20]     35      25     [20]
 
  */
-public class LargestSumArrWithKSum {
+public class LargestSubArrWithKSum {
 
     int maxLen(int[] A, int n,int target) {
         // Your code here

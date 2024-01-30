@@ -3,10 +3,10 @@ package array;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class LargestSumArrWithKSumTest {
+public class LargestSubArrWithKSumTest {
 
 
-    LargestSumArrWithKSum z = new LargestSumArrWithKSum();
+    LargestSubArrWithKSum z = new LargestSubArrWithKSum();
 
     @Test
     public void test1() {
