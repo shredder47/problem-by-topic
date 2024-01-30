@@ -14,7 +14,7 @@ public class ReverseLinkedListTest {
 
         ListNode reversed = r.reverseList(l);
 
-        Assert.assertEquals("3 2 1 ", r.printLinkedList(reversed));
+        Assert.assertEquals("3 2 1", LinkedListUtil.printLinkedList(reversed));
 
 
     }
