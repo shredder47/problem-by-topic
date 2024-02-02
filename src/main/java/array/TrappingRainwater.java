@@ -3,7 +3,7 @@ package array;
 public class TrappingRainwater {
 
 /*
-
+    https://leetcode.com/problems/trapping-rain-water/description/
     5:
     J.
     ?.
