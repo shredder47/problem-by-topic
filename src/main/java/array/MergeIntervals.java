@@ -39,7 +39,7 @@ public class MergeIntervals {
 
             if (incomingLowerBound <= lastUpperBound) {
 
-                int finalLowerBound = Math.max(incomingLowerBound,lastLowerBound);
+                int finalLowerBound = Math.min(incomingLowerBound,lastLowerBound);
                 int finalUpperBound = Math.max(incomingUpperBound,lastUpperBound);
 
                 List<Integer> mergedItem = Arrays.asList(finalLowerBound, finalUpperBound);
