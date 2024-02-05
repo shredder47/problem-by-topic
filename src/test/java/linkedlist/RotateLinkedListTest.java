@@ -3,8 +3,6 @@ package linkedlist;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class RotateLinkedListTest {
 
     RotateLinkedList r = new RotateLinkedList();

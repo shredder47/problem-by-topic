@@ -21,7 +21,6 @@ public class RotateMatrix {
         //01 -> 12
         //02 -> 22
 
-
         for (int row = 0; row < matrixDimension; row++) {
 
             for (int col = 0; col < matrixDimension; col++) {
@@ -29,12 +28,9 @@ public class RotateMatrix {
                 newMatrix[col][(matrixDimension - 1) - row] = matrix[row][col];
 
             }
-
-
         }
 
         //mutate original array
-
         for (int row = 0; row < matrixDimension; row++) {
 
             for (int col = 0; col < matrixDimension; col++) {
