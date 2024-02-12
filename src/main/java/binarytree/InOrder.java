@@ -16,16 +16,16 @@ public class InOrder {
 
      */
 
-    public List<Integer> inorderTraversal(TreeNode root) {
+    public List<Integer> inorderTraversal(TreeNode <Integer>root) {
 
         List<Integer> inOrderResult = new ArrayList<>();
-        Stack<TreeNode> stack = new Stack<>();
+        Stack<TreeNode<Integer>> stack = new Stack<>();
 
         if (root == null) {
             return inOrderResult;
         }
 
-        TreeNode currentNode = root;
+        TreeNode<Integer> currentNode = root;
 
         while (currentNode != null || !stack.isEmpty()) {
 
@@ -34,7 +34,7 @@ public class InOrder {
                 stack.push(currentNode);
                 currentNode = currentNode.left;
             } else {
-                TreeNode node = stack.pop();
+                TreeNode<Integer> node = stack.pop();
                 inOrderResult.add(node.val);
                 currentNode = node.right;
             }

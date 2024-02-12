@@ -16,16 +16,16 @@ public class PreOrder {
 
      */
 
-    public List<Integer> preorderTraversal(TreeNode root) {
+    public List<Integer> preorderTraversal(TreeNode<Integer> root) {
 
         List<Integer> preOrderList = new ArrayList<>();
-        Stack<TreeNode> stack = new Stack<>();
+        Stack<TreeNode<Integer>> stack = new Stack<>();
 
         if (root == null) {
             return preOrderList;
         }
 
-        TreeNode currentNode = root;
+        TreeNode<Integer> currentNode = root;
 
         while (currentNode != null || !stack.isEmpty()) {
 
@@ -33,7 +33,7 @@ public class PreOrder {
                 stack.push(currentNode);
                 currentNode = currentNode.left;
             } else {
-                TreeNode node = stack.pop();
+                TreeNode<Integer> node = stack.pop();
                 currentNode = node.right;
             }
         }
