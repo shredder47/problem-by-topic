@@ -16,6 +16,7 @@ public class PreOrder {
 
      */
 
+    // Question can also be PreOrder using single stack
     public List<Integer> preorderTraversal(TreeNode<Integer> root) {
 
         List<Integer> preOrderList = new ArrayList<>();
