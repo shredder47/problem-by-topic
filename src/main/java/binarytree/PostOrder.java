@@ -14,10 +14,10 @@ public class PostOrder {
 
      */
 
-    public List<Integer> postorderTraversal(TreeNode<Integer> root) {
+    public List<Integer> postorderTraversal(TreeNodeGeneric<Integer> root) {
 
         List<Integer> postOrderList = new ArrayList<>();
-        Stack<TreeNode<Integer>> stack = new Stack<>();
+        Stack<TreeNodeGeneric<Integer>> stack = new Stack<>();
 
         if (root == null) {
             return postOrderList;
@@ -27,7 +27,7 @@ public class PostOrder {
 
         while (!stack.isEmpty()){
 
-            TreeNode<Integer> pop = stack.pop();
+            TreeNodeGeneric<Integer> pop = stack.pop();
             postOrderList.add(pop.val);
 
             if(pop.left != null)

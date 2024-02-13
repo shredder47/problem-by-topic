@@ -1,22 +1,20 @@
 package binarytree;
 
-public class TreeNode<T> {
-
-    T val;
-    TreeNode<T> left;
-    TreeNode<T> right;
+public class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
 
     TreeNode() {
     }
 
-    TreeNode(T val) {
+    TreeNode(int val) {
         this.val = val;
     }
 
-    TreeNode(T val, TreeNode<T> left, TreeNode<T> right) {
+    TreeNode(int val, TreeNode left, TreeNode right) {
         this.val = val;
         this.left = left;
         this.right = right;
     }
-
 }

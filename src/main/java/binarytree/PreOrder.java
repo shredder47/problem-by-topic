@@ -17,16 +17,16 @@ public class PreOrder {
      */
 
     // Question can also be PreOrder using single stack
-    public List<Integer> preorderTraversal(TreeNode<Integer> root) {
+    public List<Integer> preorderTraversal(TreeNodeGeneric<Integer> root) {
 
         List<Integer> preOrderList = new ArrayList<>();
-        Stack<TreeNode<Integer>> stack = new Stack<>();
+        Stack<TreeNodeGeneric<Integer>> stack = new Stack<>();
 
         if (root == null) {
             return preOrderList;
         }
 
-        TreeNode<Integer> currentNode = root;
+        TreeNodeGeneric<Integer> currentNode = root;
 
         while (currentNode != null || !stack.isEmpty()) {
 
@@ -34,7 +34,7 @@ public class PreOrder {
                 stack.push(currentNode);
                 currentNode = currentNode.left;
             } else {
-                TreeNode<Integer> node = stack.pop();
+                TreeNodeGeneric<Integer> node = stack.pop();
                 currentNode = node.right;
             }
         }

@@ -22,15 +22,15 @@ public class LeftViewOfBinaryTreeTest {
                           \
                            9
  */
-        TreeNode<Integer> node1 = new TreeNode<>(1);
-        TreeNode<Integer> node2 = new TreeNode<>(2);
-        TreeNode<Integer> node3 = new TreeNode<>(3);
-        TreeNode<Integer> node4 = new TreeNode<>(4);
-        TreeNode<Integer> node5 = new TreeNode<>(5);
-        TreeNode<Integer> node6 = new TreeNode<>(6);
-        TreeNode<Integer> node7 = new TreeNode<>(7);
-        TreeNode<Integer> node8 = new TreeNode<>(8);
-        TreeNode<Integer> node9 = new TreeNode<>(9);
+        TreeNodeGeneric<Integer> node1 = new TreeNodeGeneric<>(1);
+        TreeNodeGeneric<Integer> node2 = new TreeNodeGeneric<>(2);
+        TreeNodeGeneric<Integer> node3 = new TreeNodeGeneric<>(3);
+        TreeNodeGeneric<Integer> node4 = new TreeNodeGeneric<>(4);
+        TreeNodeGeneric<Integer> node5 = new TreeNodeGeneric<>(5);
+        TreeNodeGeneric<Integer> node6 = new TreeNodeGeneric<>(6);
+        TreeNodeGeneric<Integer> node7 = new TreeNodeGeneric<>(7);
+        TreeNodeGeneric<Integer> node8 = new TreeNodeGeneric<>(8);
+        TreeNodeGeneric<Integer> node9 = new TreeNodeGeneric<>(9);
 
         node1.left = node2;
         node1.right = node3;

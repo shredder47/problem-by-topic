@@ -27,7 +27,7 @@ Left view of following tree is 1 2 4 8 9.
                        9
  */
 
-    public ArrayList<Integer> getLeftView(TreeNode<Integer> root) {
+    public ArrayList<Integer> getLeftView(TreeNodeGeneric<Integer> root) {
 
         if (root == null)
             return new ArrayList<>();
@@ -41,9 +41,9 @@ Left view of following tree is 1 2 4 8 9.
         return result;
     }
 
-    private void computeLeftViews(TreeNode<Integer> node, ArrayList<Integer> result) {
+    private void computeLeftViews(TreeNodeGeneric<Integer> node, ArrayList<Integer> result) {
 
-        Queue<TreeNode<Integer>> queue = new LinkedList<>();
+        Queue<TreeNodeGeneric<Integer>> queue = new LinkedList<>();
 
         queue.add(node);
         queue.add(null);
@@ -51,7 +51,7 @@ Left view of following tree is 1 2 4 8 9.
         List<Integer> currentLevelItems = new ArrayList<>();
         while (!queue.isEmpty()) {
 
-            TreeNode<Integer> poll = queue.poll();
+            TreeNodeGeneric<Integer> poll = queue.poll();
 
             if (poll == null) {
 
