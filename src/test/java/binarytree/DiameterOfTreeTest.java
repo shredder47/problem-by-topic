@@ -2,8 +2,6 @@ package binarytree;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class DiameterOfTreeTest {
 
     DiameterOfTree d = new DiameterOfTree();
@@ -32,10 +30,6 @@ public class DiameterOfTreeTest {
         two.left = four;
         two.right = five;
         three.right = six;
-
-        System.out.println(d.getDiameter(one));
-
-
 
     }
 }
