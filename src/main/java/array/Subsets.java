@@ -1,4 +1,4 @@
-package recursivecodes;
+package array;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +15,7 @@ public class Subsets {
 //    Input: nums = [0]
 //    Output: [[],[0]]
 
-
+// Logic -:https://youtu.be/Y85dfkCSlP8?si=CbRazpn2dkMUHE0-&t=342
     public List<List<Integer>> subsets(int[] nums) {
 
         List<List<Integer>> subsets = new ArrayList<>();
