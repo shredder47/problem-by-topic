@@ -47,8 +47,6 @@ public class SubSetsRec {
             subset.remove(subset.size() - 1);
 
         }
-
-
     }
 
 
