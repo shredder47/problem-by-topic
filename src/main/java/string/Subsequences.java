@@ -53,6 +53,7 @@ public class Subsequences {
             temp = new ArrayList<>();
         }
 
+        //to remove "" added during declaration
         strings.remove(0);
         return strings;
 
