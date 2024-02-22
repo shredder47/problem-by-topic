@@ -1,6 +1,7 @@
-package array;
+package recursivecodes;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 //https://leetcode.com/problems/permutations/
 public class Permutations {
@@ -18,13 +19,6 @@ public class Permutations {
 //
 //    Input: nums = [1]
 //    Output: [[1]]
-    public static void main(String[] args) {
-
-        Permutations p = new Permutations();
-        System.out.println(p.permute(new int[]{1, 2, 3}));
-
-
-    }
 
     public List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
