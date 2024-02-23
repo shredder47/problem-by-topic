@@ -6,33 +6,32 @@ import org.junit.Test;
 public class LargestSubArrWithKSumTest {
 
 
-    LargestSubArrWith0Sum z = new LargestSubArrWith0Sum();
+    LargestSubArrWithKSum z = new LargestSubArrWithKSum();
 
     @Test
     public void test1() {
-
+                            //15  13  15  7  8  15 25  48
         int[] arr = new int[]{15, -2, 2, -8, 1, 7, 10, 23};
-
-        Assert.assertEquals(5, z.maxLen(arr, arr.length));
+        Assert.assertEquals(5,z.subarraySum(arr,8));
 
     }
 
     @Test
     public void test2() {
-                            //10  25  20  35   25  30
-        int[] arr = new int[]{10, 15, -5, 15, -10, 5};
-
-        Assert.assertEquals(3, z.maxLen(arr, arr.length));
+        int[] arr = new int[]{1,1,1};
+        Assert.assertEquals(2,z.subarraySum(arr,2));
 
     }
 
     @Test
-    public void test101() {
-
-        int[] arr = new int[]{-1,1,-1,1};
-
-        Assert.assertEquals(4, z.maxLen(arr, arr.length));
-
+    public void test3() {
+        int[] arr = new int[]{1,2,3};
+        Assert.assertEquals(2,z.subarraySum(arr,3));
+    }
+    @Test
+    public void test4() {
+        int[] arr = new int[]{1,2,1,2,1};
+        Assert.assertEquals(3,z.subarraySum(arr,3));
     }
 
 }
