@@ -6,7 +6,7 @@ import java.util.*;
 public class Subsets2 {
 
 //    Example 1:
-//
+//    Here numbers contains duplicate items
 //    Input: nums = [1,2,2]
 //    Output: [[],[1],[1,2],[1,2,2],[2],[2,2]]
 //    Example 2:

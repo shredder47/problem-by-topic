@@ -12,18 +12,17 @@ Output: 5, nums = [0,1,2,3,4,_,_,_,_,_]
  */
     public int removeDuplicates(int[] nums) {
 
-        int k = 1;
+        int k = 0;
         int n = nums.length;
 
-
-        for (int i = 1; i < n;i++){
-            if(nums[i-1] != nums[i]){
-                nums[k++] = nums[i];
+        for (int i = 0; i < n;i++){
+            if(nums[k] == nums[i]){
+                continue;
+            }else{
+                nums[++k] = nums[i];
             }
         }
-
-
-        return k;
+        return k+1;
     }
 
 

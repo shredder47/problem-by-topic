@@ -15,26 +15,26 @@ import java.util.HashMap;
 public class LargestSubArrWithEqual1And0 {
 
     int maxLen(int[] A, int n) {
-        // Your code here
+
         HashMap<Integer, Integer> cumSumToIndex = new HashMap<>();
-        int target = 0;
         int maxLength = 0;
         int cumSum = 0;
 
         for (int i = 0; i < n; i++) {
 
-            if(A[i] == 0){
+            //consider all 0s as -1
+            if (A[i] == 0) {
                 cumSum = cumSum + (-1);
-            }else{
+            } else {
                 cumSum = cumSum + A[i];
             }
 
-            if (cumSum == target) {
+            if (cumSum == 0) {
                 maxLength = i + 1; // current pointer + 1(as arr starts from 0)
             } else {
-                if (cumSumToIndex.get(cumSum - target) != null) {
+                if (cumSumToIndex.containsKey(cumSum)) {
                     // Index after which the numbers are summing up to target
-                    int idx = cumSumToIndex.get((cumSum - target));
+                    int idx = cumSumToIndex.get((cumSum));
 
                     //Number of digits forming the required target
                     int numDigits = i - idx;

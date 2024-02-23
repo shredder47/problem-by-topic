@@ -33,6 +33,17 @@ public class LongestSubString {
     //  LR
     //  ||
     //   d  v  d  f
+    //--------------------------------------
+    //              L       R
+    //  a   b   c   a   b   c   b   b
+
+    //              L           R      when R at b, keep removing elements from visited
+    //  a   b   c   a   b   c   b   b  till b is removed, i.e. a will be removed,then b
+
+    // Visited - a b c , R at b, L will remove a ,as its pointing at it,then it will remove b ,
+    // and finally L will be at c and b will be inserted by R, Visited : c b
+    //                      L   R
+    //  a   b   c   a   b   c   b   b
 
     public int lengthOfLongestSubstring(String s) {
 
@@ -50,15 +61,13 @@ public class LongestSubString {
                 visited.add(s.charAt(right));
                 right++;
                 maxSubStringSoFar = Math.max(maxSubStringSoFar,visited.size());
-                //if found duplicate, remove that char and increment the left pointer
+                //if found duplicate, keep increasing the left pointer until duplication item is removed
+                //once removed, the item at right pointer will be inserted as it a while loop
             }else{
                 visited.remove(s.charAt(left));
                 left++;
             }
-
-
         }
-
         return maxSubStringSoFar;
 
     }
