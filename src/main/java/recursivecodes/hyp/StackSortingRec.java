@@ -1,8 +1,8 @@
-package recursivecodes;
+package recursivecodes.hyp;
 
 import java.util.Stack;
 
-public class SlackSortingRec {
+public class StackSortingRec {
 
     public static void main(String[] args) {
 

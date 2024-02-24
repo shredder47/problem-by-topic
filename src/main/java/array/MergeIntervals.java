@@ -1,58 +1,52 @@
 package array;
 
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 // https://leetcode.com/problems/merge-intervals/description/
 public class MergeIntervals {
-
 
     //[[1,3],[2,6],[8,10],[15,18]]
     public int[][] merge(int[][] intervals) {
 
         List<List<Integer>> mergedList = new ArrayList<>();
-
         Arrays.sort(intervals, Comparator.comparingInt(o -> o[0]));
 
         for (int[] interval : intervals) {
             insertIntervals(interval, mergedList);
         }
-
         return convertListToArr(mergedList);
     }
 
     public void insertIntervals(int[] interval, List<List<Integer>> mergedList) {
 
-        if (mergedList.isEmpty())//First Time
-            mergedList.add(Arrays.asList(interval[0], interval[1]));
+        int start = interval[0];
+        int end = interval[1];
+
+        if (mergedList.isEmpty())
+            mergedList.add(Arrays.asList(start, end));
         else {
+
+            //get last Intervals
+
             List<Integer> lastInterval = mergedList.get(mergedList.size() - 1);
+            int lastStart = lastInterval.get(0);
+            int lastEnd = lastInterval.get(1);
 
-            int incomingLowerBound = interval[0];
-            int incomingUpperBound = interval[1];
+            //if incoming start is less than last end, merge it
+            if (start <= lastEnd) {
 
-            Integer lastLowerBound = lastInterval.get(0);
-            Integer lastUpperBound = lastInterval.get(1);
+                int newStart = Math.min(start, lastStart);
+                int newEnd = Math.max(end, lastEnd);
 
-            if (incomingLowerBound <= lastUpperBound) {
-
-                int finalLowerBound = Math.min(incomingLowerBound,lastLowerBound);
-                int finalUpperBound = Math.max(incomingUpperBound,lastUpperBound);
-
-                List<Integer> mergedItem = Arrays.asList(finalLowerBound, finalUpperBound);
-                // Remove last item
+                //is its merged, insert this by removing the old interval
                 mergedList.remove(mergedList.size() - 1);
-                // Added merged Entry
-                mergedList.add(mergedItem);
+                mergedList.add(Arrays.asList(newStart, newEnd));
             } else {
-                // Add the interval to the list
-                mergedList.add(Arrays.asList(incomingLowerBound, incomingUpperBound));
+                //interval cannot be merged, hence add as it is...
+                mergedList.add(Arrays.asList(start, end));
             }
         }
-
     }
 
     public int[][] convertListToArr(List<List<Integer>> mergedList) {

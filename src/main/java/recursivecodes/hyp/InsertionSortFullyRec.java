@@ -1,4 +1,4 @@
-package recursivecodes;
+package recursivecodes.hyp;
 
 import java.util.Arrays;
 
