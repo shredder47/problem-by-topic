@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 //https://leetcode.com/problems/subsets/description/
-public class SubSetsRec {
+public class SubsetOfArrayUsingRecursion {
 
 //    Example 1:
 //

@@ -12,7 +12,8 @@ public class isSorted {
 
     private static boolean isSorted(int[] arr, int low, int high) {
 
-        if (arr.length == 0 || arr.length == 1) return true;
+        if (arr.length == 0 || arr.length == 1)
+            return true;
 
         if (low < high) {
 

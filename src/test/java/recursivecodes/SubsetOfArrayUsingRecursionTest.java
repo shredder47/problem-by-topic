@@ -2,9 +2,9 @@ package recursivecodes;
 
 import org.junit.Test;
 
-public class SubSetsRecTest {
+public class SubsetOfArrayUsingRecursionTest {
 
-    SubSetsRec s = new SubSetsRec();
+    SubsetOfArrayUsingRecursion s = new SubsetOfArrayUsingRecursion();
     @Test
     public void subsets() {
 
