@@ -18,7 +18,6 @@ public class OddEvenTree {
 //    Input: root = [1,10,4,3,null,7,9,12,8,6,null,null,2]
 //    Output: true
 
-
     /*
                  5
                /   \
