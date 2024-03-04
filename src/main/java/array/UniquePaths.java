@@ -33,27 +33,27 @@ public class UniquePaths {
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 
      */
-    public int uniquePaths(int m, int n) {
+    public long uniquePaths(int m, int n) {
 
-        Map<String, Integer> memo = new HashMap<>();
+        Map<String, Long> memo = new HashMap<>();
         return uniquePaths(m, n, memo);
-
-
     }
 
-    public int uniquePaths(int m, int n, Map<String, Integer> memo) {
+    public long uniquePaths(int m, int n, Map<String, Long> memo) {
+
+        String key = m + "," + n;
+
+        //If key was cached, return it
+        if (memo.containsKey(key))
+            return memo.get(key);
 
         if (m == 1 || n == 1) return 1;
         if (m == 0 || n == 0) return 0;
 
+        //IF NOT put the value for that key
+        memo.put(key, uniquePaths(m, n - 1, memo) + uniquePaths(m - 1, n, memo));
 
-        String key = m + "," + n;
-
-        if (memo.containsKey(key))
-            return memo.get(key);
-        else
-            memo.put(key, uniquePaths(m, n - 1, memo) + uniquePaths(m - 1, n, memo));
-
+        // returned the value, all calc was done, bound to have the value in memo
         return memo.get(key);
     }
 

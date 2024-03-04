@@ -44,7 +44,6 @@ public class MaximumSumSubArray {
             // if the current sum is going negative, reset the search
             if (currentSum < 0)
                 currentSum = 0;
-
         }
 
         return maxValueSoFar;

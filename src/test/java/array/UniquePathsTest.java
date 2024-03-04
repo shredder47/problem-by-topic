@@ -18,4 +18,11 @@ public class UniquePathsTest {
         Assert.assertEquals(3,u.uniquePaths(3,2));
 
     }
+
+    @Test
+    public void test3() {
+
+        Assert.assertEquals(2333606220L,u.uniquePaths(18,18));
+
+    }
 }

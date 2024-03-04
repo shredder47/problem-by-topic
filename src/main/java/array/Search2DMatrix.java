@@ -12,7 +12,6 @@ public class Search2DMatrix {
                 {23, 30, 34, 60}
          */
 
-
         int m = matrix[0].length;
 
         for (int[] ints : matrix) {
@@ -25,7 +24,6 @@ public class Search2DMatrix {
                 return binarySearch(ints, 0, m - 1, target);
             }
         }
-
 
         //if number is not in the range or any rows or number not present in selected row
         return false;
@@ -45,8 +43,6 @@ public class Search2DMatrix {
             return binarySearch(arr, low, mid-1, target);
         else
             return binarySearch(arr, mid + 1, high, target);
-
-
     }
 
 }

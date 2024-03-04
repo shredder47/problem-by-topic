@@ -1,6 +1,6 @@
 package array;
 
-//https://leetcode.com/problems/merge-sorted-array/description/
+//https://leetcode.com/problems/find-missing-and-repeated-values/description/
 public class MergeSortedArray {
 
 
