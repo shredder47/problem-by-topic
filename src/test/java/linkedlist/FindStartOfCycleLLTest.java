@@ -55,7 +55,7 @@ public class FindStartOfCycleLLTest {
         head.next.next.next=nodeN4;
         head.next.next.next.next = node2;
 
-        Assert.assertEquals(2,f2.detectCycle(head).val);
+        Assert.assertEquals(2,f.detectCycle(head).val);
 
     }
 
@@ -65,7 +65,7 @@ public class FindStartOfCycleLLTest {
 
         ListNode list = new ListNode(1,new ListNode(2,new ListNode(2,new ListNode(1))));
 
-        Assert.assertNull(f2.detectCycle(list));
+        Assert.assertNull(f.detectCycle(list));
 
     }
 
@@ -74,7 +74,7 @@ public class FindStartOfCycleLLTest {
 
         ListNode list = new ListNode(1);
 
-        Assert.assertNull(f2.detectCycle(list));
+        Assert.assertNull(f.detectCycle(list));
 
     }
 

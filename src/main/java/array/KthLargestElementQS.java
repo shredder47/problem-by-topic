@@ -6,7 +6,7 @@ package array;
 /*
 Example 1:
 
-Input: nums = [3,2,1,5,6,4], k = 2 = [6,5,4,3,2,1]
+Input: nums = [3,2,1,5,6,4]
 Output: 5
 Example 2:
 

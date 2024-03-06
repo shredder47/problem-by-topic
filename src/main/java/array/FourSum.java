@@ -44,11 +44,11 @@ public class FourSum {
         return new ArrayList<>(uniqueQuads);
     }
 
-    public List<List<Integer>> modifiedThreeSum(int[] nums, int selectedIndex, int start, int end, int newTarget) {
+    public List<List<Integer>> modifiedThreeSum(int[] nums, int preDeterminedIndex, int start, int end, int remainingTarget) {
 
         int i = start;
 
-        Set<List<Integer>> triplets = new HashSet<>();
+        Set<List<Integer>> quads = new HashSet<>();
 
         while (i < end) {
 
@@ -58,10 +58,10 @@ public class FourSum {
             while (L < R) {
                 long sum = (long) nums[i] + (long) nums[L] + (long) nums[R];
 
-                if (sum == newTarget) {
-                    triplets.add(Arrays.asList(nums[selectedIndex], nums[i], nums[L], nums[R]));
+                if (sum == remainingTarget) {
+                    quads.add(Arrays.asList(nums[preDeterminedIndex], nums[i], nums[L], nums[R]));
                     L++;
-                } else if (sum > newTarget)
+                } else if (sum > remainingTarget)
                     R--;
                 else
                     L++;
@@ -69,7 +69,7 @@ public class FourSum {
             i++;
         }
 
-        return new ArrayList<>(triplets);
+        return new ArrayList<>(quads);
     }
 
 }

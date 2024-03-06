@@ -27,7 +27,7 @@ public class TwoSum2 {
 
         int[] targetPosition = new int[2];
 
-        while (leftPointer <= rightPointer) {
+        while (leftPointer < rightPointer) {
             if (nums[leftPointer] + nums[rightPointer] == target) {
                 targetPosition[0] = leftPointer + 1;
                 targetPosition[1] = rightPointer + 1;

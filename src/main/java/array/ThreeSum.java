@@ -37,7 +37,7 @@ public class ThreeSum {
         //So No Duplicate Triplets Appears
         Set<List<Integer>> triplets = new HashSet<>();
 
-        while (i < length) {
+        while (i < length - 2) {
 
             //Basically doing 2sum II ,where sorted array was present and we put two pointers
             int L = i + 1;

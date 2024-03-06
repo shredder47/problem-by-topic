@@ -5,6 +5,7 @@ import java.util.Map;
 
 public class CopyListWithRandomPointer {
 
+    //https://leetcode.com/problems/copy-list-with-random-pointer/description/
 
     public Node copyRandomList(Node head) {
 
@@ -14,24 +15,24 @@ public class CopyListWithRandomPointer {
 
         //Pass one: Create clone of old's object(forget about random pointer)
 
-        Node cur = head;
-        while (cur != null) {
+        Node oldCur = head;
+        while (oldCur != null) {
 
-            oldToNewMap.put(cur, new Node(cur.val));
-            cur = cur.next;
+            oldToNewMap.put(oldCur, new Node(oldCur.val));
+            oldCur = oldCur.next;
         }
 
-        cur = head;
-
+        oldCur = head;
 
         //Pass two: mutating new object by sequentially traversing old node and getting its information for mapping it to new one
-        while (cur != null) {
+        while (oldCur != null) {
 
-            Node cloned = oldToNewMap.get(cur);
-            cloned.next = oldToNewMap.get(cur.next);
-            cloned.random = oldToNewMap.get(cur.random);
+            Node newObject = oldToNewMap.get(oldCur);
 
-            cur = cur.next;
+            newObject.next = oldToNewMap.get(oldCur.next);
+            newObject.random = oldToNewMap.get(oldCur.random);
+
+            oldCur = oldCur.next;
 
         }
 

@@ -21,11 +21,11 @@ public class TownJudge {
 
 
     /*For input {{1,3},{1,4},{2,3},{2,4},{4,3}}
-       when t[0] is 1 and t[1] is 3 trustCount is [0, -1, 0, 1, 0]
-       when t[0] is 1 and t[1] is 4 trustCount is [0, -2, 0, 1, 1]
-       when t[0] is 2 and t[1] is 3 trustCount is [0, -2, -1, 2, 1]
-       when t[0] is 2 and t[1] is 4 trustCount is [0, -2, -2, 2, 2]
-       when t[0] is 4 and t[1] is 3 trustCount is [0, -2, -2, 3, 1]
+       when trust-er is 1 and getting-trusted is 3 trustCount is [0, -1, 0, 1, 0]
+       when trust-er is 1 and getting-trusted is 4 trustCount is [0, -2, 0, 1, 1]
+       when trust-er is 2 and getting-trusted is 3 trustCount is [0, -2, -1, 2, 1]
+       when trust-er is 2 and getting-trusted is 4 trustCount is [0, -2, -2, 2, 2]
+       when trust-er is 4 and getting-trusted is 3 trustCount is [0, -2, -2, 3, 1]
        */
     public int findJudge(int n, int[][] trust) {
 
