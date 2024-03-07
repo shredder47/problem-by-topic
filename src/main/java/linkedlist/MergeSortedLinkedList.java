@@ -22,10 +22,10 @@ public class MergeSortedLinkedList {
 
         if (list1 == null & list2 == null) return null;
 
-        ListNode newNode = new ListNode();
+        ListNode dummyNode = new ListNode();
 
         // For traversing
-        ListNode currentNode = newNode;
+        ListNode currentNode = dummyNode;
 
         // Traverse when both nodes are not empty
 
@@ -35,14 +35,13 @@ public class MergeSortedLinkedList {
 
                 currentNode.next = new ListNode(list1.val);
                 list1 = list1.next;
-                currentNode = currentNode.next;
 
             } else {
                 currentNode.next = new ListNode(list2.val);
                 list2 = list2.next;
-                currentNode = currentNode.next;
 
             }
+            currentNode = currentNode.next;
         }
 
         if (list1 != null) {
@@ -54,7 +53,7 @@ public class MergeSortedLinkedList {
         }
 
         //as first value was placeholder/null
-        return newNode.next;
+        return dummyNode.next;
 
     }
 

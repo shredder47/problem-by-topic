@@ -54,7 +54,7 @@ public class PalindromeLinkedList {
 
     }
 
-    // 1 -> 2 -> 2 ->   --->  1 ->  2    2 <-- 1
+    // 1 -> 2 -> 2 -> 1  --->  1 -> 2 (-> 2)   2 <-- 1
 
     private ListNode reverse(ListNode startingNode) {
 

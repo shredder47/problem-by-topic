@@ -6,8 +6,8 @@ public class RotateLinkedList {
     //             1 --> 2 --> 3     4 --> 5
     //             _____________     +++++++
     //
-    //  4 --> 5 -> 1 --> 2 --> 3
-    //  +++++++    _____________
+    //                               4 --> 5 -> 1 --> 2 --> 3 -> null
+    //                               +++++++++  _____________
 
     public  ListNode  rotateRight(ListNode head, int k) {
 
@@ -30,13 +30,14 @@ public class RotateLinkedList {
             fast = fast.next;
             slow = slow.next;
         }
+
         if(slow.next != null){
             ListNode newHead = slow.next;
             slow.next = null;
             fast.next = head;
+
             head = newHead;
         }
-
 
         return head;
     }

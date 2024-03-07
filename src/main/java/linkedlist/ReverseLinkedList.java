@@ -17,7 +17,6 @@ public class ReverseLinkedList {
 
     // 1 -> 2 -> 3    == 3 -> 2 -> 1
 
-
     public ListNode reverseList(ListNode head) {
 
         //int

@@ -1,9 +1,9 @@
 package linkedlist;
 
 public class RemoveNthNodeFromEndOfLinkedList {
-
+//https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/
     /**
-     * https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/
+     *
      * Input: head = [1,2,3,4,5], n = 2
      * Output: [1,2,3,5]
      * Example 2:
