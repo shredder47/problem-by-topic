@@ -38,7 +38,7 @@ public class ValidParentheses {
             }
         }
 
-        return true;
+        return stack.isEmpty();
     }
 
 

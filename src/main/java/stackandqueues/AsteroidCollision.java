@@ -4,29 +4,47 @@ import java.util.Stack;
 
 public class AsteroidCollision {
 
+    //https://leetcode.com/problems/asteroid-collision/
+
     public int[] asteroidCollision(int[] asteroids) {
 
         Stack<Integer> stack = new Stack<>();
 
         for (int asteroid : asteroids) {
-            //If its going right, then blindly put it as no previous element can interfere, all at same speed
-            if (asteroid > 0) {
-                stack.push(asteroid);
-            } else {
-                //If Asteroid is going left
 
-                //if asteroid traveling left is bigger then smash(pop) all asteroids going right
-                while (!stack.isEmpty() && stack.peek() > 0 && stack.peek() < -asteroid) {
+
+            // Asteroid is going right, add as it is, nothing to check... why?
+            // All going left / right are at same speed.
+            // So if new positive asteroid spawns ,it will also go right,no other asteroid before it can catch it
+            // therefore anything going right naturally we dont have to worry
+            if (asteroid > 0)
+                stack.push(asteroid);
+
+            else {
+                // We need to check asteroid when its traveling left also when its spawned later
+                // Reason is the asteroids spawned before this and also travelling right will collide, hence we need
+                // To check if its going to destroy / both getting destroyed / getting destroyed
+
+                // Negative Asteroid should destroy all Smaller Positive Asteroid on its path
+                while (!stack.isEmpty() && stack.peek() > 0 && stack.peek() < -asteroid){
                     stack.pop();
                 }
-                //Put the asteroid going left blindly if stack is empty, nothing to compare..
-                //Put the asteroid going left on a place next to an asteroid going left
-                if (stack.isEmpty() || stack.peek() < 0) {
+
+                // IF stack is empty or Last Asteroid is Negative, nothing to compare
+                if(stack.isEmpty() || stack.peek() < 0){
                     stack.push(asteroid);
-                    // if asteroid traveling left is equal to asteroid going right then burst(pop)
-                } else if (stack.peek() == -asteroid) {
-                    stack.pop();
+                    continue;
                 }
+
+                //IF last Positive Size is equal to Incoming Negative Size, Blast!
+                if(!stack.isEmpty() && stack.peek() == -asteroid){
+                    stack.pop();
+                    continue;
+                }
+
+                //IF last Positive is bigger than incoming negative, Negative Blasts!
+                if(!stack.isEmpty() && stack.peek() > -asteroid)
+                    continue;
             }
         }
 
