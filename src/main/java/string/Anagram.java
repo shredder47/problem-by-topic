@@ -10,26 +10,24 @@ public class Anagram {
     public boolean isAnagram(String s, String t) {
 
         if (s.length() != t.length()) return false;
-        Map<Character, Integer> sf = new HashMap<>();
-        Map<Character, Integer> tf = new HashMap<>();
+        Map<Character, Integer> sFreq = new HashMap<>();
+        Map<Character, Integer> tFreq = new HashMap<>();
 
+        // Generating character -> frequency MAP
         for (int i = 0; i < s.length(); i++) {
-
-            sf.put(s.charAt(i), sf.getOrDefault(s.charAt(i), 0) + 1);
-            tf.put(t.charAt(i), tf.getOrDefault(t.charAt(i), 0) + 1);
+            sFreq.put(s.charAt(i), sFreq.getOrDefault(s.charAt(i), 0) + 1);
+            tFreq.put(t.charAt(i), tFreq.getOrDefault(t.charAt(i), 0) + 1);
         }
 
-        for (int i = 0; i < s.length(); i++) {
-            char c = s.charAt(i);
-            Integer countS = sf.get(c);
-            if (tf.containsKey(c)) {
-                Integer countT = tf.get(c);
-                if (countT.equals(countS)) continue;
-                else return false;
+        // Iterating
+        for (Character ch : sFreq.keySet()) {
+            if (!tFreq.containsKey(ch))
+                return false;
 
-            } else return false;
+            if (!tFreq.get(ch).equals(sFreq.get(ch)))
+                return false;
         }
-
+        //Everything went smooth
         return true;
     }
 

@@ -32,10 +32,9 @@ public class FirstUniqueCharInString {
         //iterating one by one and when  we get first count == 1 then return that position
 
         for (int i = 0; i < s.length(); i++) {
-            if(letterToFreq.get(s.charAt(i)) == 1)
+            if (letterToFreq.get(s.charAt(i)) == 1)
                 return i;
         }
-
 
         return -1;
     }

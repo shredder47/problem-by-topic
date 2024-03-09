@@ -1,5 +1,6 @@
 package stackandqueues;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 public class ValidParenthesesTest {
@@ -7,10 +8,11 @@ public class ValidParenthesesTest {
     ValidParentheses v = new ValidParentheses();
     @Test
     public void isValid() {
-        System.out.println(v.isValid("(("));
-//        System.out.println(v.isValid("("));
-//        System.out.println(v.isValid("[()]"));
-//        System.out.println(v.isValid("[()])"));
-//        System.out.println(v.isValid("()[]{}"));
+        Assert.assertFalse(v.isValid("(("));
+        Assert.assertFalse(v.isValid("("));
+        Assert.assertFalse(v.isValid("[()])"));
+
+        Assert.assertTrue(v.isValid("[()]"));
+        Assert.assertTrue(v.isValid("()[]{}"));
     }
 }
