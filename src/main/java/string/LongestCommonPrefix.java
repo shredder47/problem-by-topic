@@ -25,18 +25,18 @@ public class LongestCommonPrefix {
         /* With this we will compare other string's letter */
         String comparingString = strs[0];
 
-        for (int curLetterPointer = 0; curLetterPointer < comparingString.length(); curLetterPointer++) {
+        for (int currentCharPtr = 0; currentCharPtr < comparingString.length(); currentCharPtr++) {
 
-            char curCharVal = comparingString.charAt(curLetterPointer);
+            char curChar = comparingString.charAt(currentCharPtr);
             boolean isTerminated = false;
 
-            for (int currentStringPointer = 1; currentStringPointer < strs.length; currentStringPointer++) {
+            for (int i = 1; i < strs.length; i++) {
                 //find the current string and its length
-                String str = strs[currentStringPointer];
+                String str = strs[i];
                 int curStrLen = str.length();
 
 
-                if (curLetterPointer < curStrLen && str.charAt(curLetterPointer) == curCharVal) {
+                if (currentCharPtr < curStrLen && str.charAt(currentCharPtr) == curChar) {
                     continue; // just for code readability :)
                 } else {
                     isTerminated = true;
@@ -46,14 +46,11 @@ public class LongestCommonPrefix {
 
             // if any means do not terminate the current comparison add it to the builder
             if (!isTerminated)
-                longestPrefix.append(curCharVal);
+                longestPrefix.append(curChar);
             else
                 break;
         }
 
         return longestPrefix.toString();
-
     }
-
-
 }
