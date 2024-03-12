@@ -32,6 +32,7 @@ public class LargestSubArrWith0Sum {
 
     int maxLen(int[] A, int n) {
         HashMap<Integer, Integer> cumSumToIndex = new HashMap<>();
+        cumSumToIndex.put(0,-1);
 
         int maxLengthSoFar = 0;
         int currentCumulutiveSum = 0;
@@ -39,25 +40,20 @@ public class LargestSubArrWith0Sum {
         for (int i = 0; i < n; i++) {
 
             currentCumulutiveSum += A[i];
+            // have we seen this currentCumSum before?
+            if (cumSumToIndex.containsKey(currentCumulutiveSum)) {
+                //That means where it has seen before till now elements are adding no value hence same sum came up
+                //therefore, those elements sum is zero
 
-            if (currentCumulutiveSum == 0) {
-                maxLengthSoFar = i + 1;
+                //get the index of where it was seen last
+                Integer index = cumSumToIndex.get(currentCumulutiveSum);
+                int len = i - index;
+                maxLengthSoFar = Math.max(maxLengthSoFar, len);
 
             } else {
-                // have we seen this currentCumSum before?
-                if (cumSumToIndex.containsKey(currentCumulutiveSum)) {
-                    //That means where it has seen before till now elements are adding no value hence same sum came up
-                    //therefore, those elements sum is zero
-
-                    //get the index of where it was seen last
-                    Integer index = cumSumToIndex.get(currentCumulutiveSum);
-                    int len = i - index;
-                    maxLengthSoFar = Math.max(maxLengthSoFar, len);
-
-                } else {
-                    cumSumToIndex.put(currentCumulutiveSum, i);
-                }
+                cumSumToIndex.put(currentCumulutiveSum, i);
             }
+
         }
         return maxLengthSoFar;
     }
