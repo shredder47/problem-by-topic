@@ -48,6 +48,18 @@ public class ReverseWordsInString {
         return finalString.toString().trim();
     }
 
+    private String reverse(StringBuilder sb) {
+        if(sb.toString().isEmpty()) return "";
+
+        StringBuilder temp = new StringBuilder();
+        String rev = sb.toString();
+
+        for (int i = rev.length() - 1; i >= 0; i--) {
+            temp.append(rev.charAt(i));
+        }
+        return temp.toString();
+    }
+
     private void addToResult(StringBuilder word, StringBuilder finalString) {
         String reverse = reverse(word);
 
@@ -59,16 +71,35 @@ public class ReverseWordsInString {
         word.delete(0, word.length());
     }
 
-    private String reverse(StringBuilder sb) {
-        if(sb.toString().isEmpty()) return "";
+    //Another way to do it!
+    public  String reverseWordsTwoPointer(String s) {
 
-        StringBuilder temp = new StringBuilder();
-        String rev = sb.toString();
+        StringBuilder finalString = new StringBuilder();
+        s = s.trim();
 
-        for (int i = rev.length() - 1; i >= 0; i--) {
-            temp.append(rev.charAt(i));
+        int left = s.length() - 1;
+        int right = s.length() - 1;
+
+        while (left >= 0) {
+
+            if (s.charAt(left) != ' ')
+                left--;
+            else if (s.charAt(left) == ' ' && s.charAt(right) == ' ') {
+                left--;
+                right = left;
+            } else {
+                String substring = s.substring(left, right + 1);
+
+                finalString.append(substring);
+                left--;
+                right = left;
+            }
         }
-        return temp.toString();
+
+        finalString.append(" ").append(s.substring(left + 1, right + 1));
+
+
+        return finalString.toString().trim();
     }
 
 }
