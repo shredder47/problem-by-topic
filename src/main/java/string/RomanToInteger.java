@@ -47,13 +47,17 @@ public class RomanToInteger {
         romanToInt.put('D', 500);
         romanToInt.put('M', 1000);
 
-        if (s.length() == 1) return romanToInt.get(s.charAt(0));
+        if (s.length() == 1)
+            return romanToInt.get(s.charAt(0));
 
         int result = romanToInt.get(s.charAt(0));
         int lastValue = romanToInt.get(s.charAt(0));
 
         for (int i = 1; i < s.length(); i++) {
 
+         //   Input: s = 'MCMXCIV'
+        //    Output: 1994
+        //    Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
 
             int currentValue = romanToInt.get(s.charAt(i));
             // ROMAN Number are usually High to Low |

@@ -1,9 +1,6 @@
 package string;
 
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.PriorityQueue;
+import java.util.*;
 
 //https://leetcode.com/problems/sort-characters-by-frequency/description/?envType=daily-question&envId=2024-02-07
 public class SortCharsByFreq {
@@ -31,7 +28,8 @@ public class SortCharsByFreq {
     public String frequencySort(String s) {
         StringBuilder sb = new StringBuilder();
 
-        PriorityQueue<Pair> freqToChar = new PriorityQueue<>(Comparator.comparingInt(Pair::getFreq).reversed());
+        //Make this a max heap
+        PriorityQueue<Map.Entry<Character, Integer>> freqToChar = new PriorityQueue<>(Map.Entry.comparingByValue((o1, o2) -> o2 - o1));
 
         //Making Char To Freq
         Map<Character, Integer> charToFreq = new HashMap<>();
@@ -39,20 +37,18 @@ public class SortCharsByFreq {
             charToFreq.put(s.charAt(i), charToFreq.getOrDefault(s.charAt(i), 0) + 1);
         }
 
-        // Making Freq To Char for Sorting by Freq (using priority queue so that its sorted by Freq HIGH to LOW
-        for (Character c : charToFreq.keySet()) {
-            freqToChar.add(new Pair(charToFreq.get(c), c));
-        }
+        //Adding to Priority Queue
+        freqToChar.addAll(charToFreq.entrySet());
 
         while (!freqToChar.isEmpty()){
 
             //Getting Chars one by one from Highest Freq to Lowest
-            Pair pair = freqToChar.poll();
+            Map.Entry<Character, Integer> poll = freqToChar.poll();
 
             // To track how many char to print by its freq
             int counter = 0;
-            int timesToPrint = pair.getFreq();
-            char letter = pair.getLetter();
+            int timesToPrint = poll.getValue();
+            char letter = poll.getKey();
 
             while (counter < timesToPrint) {
                 sb.append(letter);
@@ -61,32 +57,6 @@ public class SortCharsByFreq {
         }
 
         return sb.toString();
-    }
-
-    public static class Pair {
-        int freq;
-        char letter;
-
-        public Pair(int freq, char letter) {
-            this.freq = freq;
-            this.letter = letter;
-        }
-
-        public int getFreq() {
-            return freq;
-        }
-
-        public void setFreq(int freq) {
-            this.freq = freq;
-        }
-
-        public char getLetter() {
-            return letter;
-        }
-
-        public void setLetter(char letter) {
-            this.letter = letter;
-        }
     }
 
 }
