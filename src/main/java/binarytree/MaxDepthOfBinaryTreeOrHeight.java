@@ -1,7 +1,7 @@
 package binarytree;
 
 //https://leetcode.com/problems/maximum-depth-of-binary-tree/
-public class MaxDepthOfBinaryTree {
+public class MaxDepthOfBinaryTreeOrHeight {
 
     public int maxDepth(TreeNode root) {
         return h(root);
@@ -12,7 +12,10 @@ public class MaxDepthOfBinaryTree {
         if(node == null)
             return 0;
 
-        return Math.max(1 + h(node.left) , 1 + h(node.right));
+        int left = h(node.left);
+        int right = h(node.right);
+
+        return 1 + Math.max(left,right);
     }
 
 

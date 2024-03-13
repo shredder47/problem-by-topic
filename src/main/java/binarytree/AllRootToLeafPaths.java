@@ -15,37 +15,30 @@ public class AllRootToLeafPaths {
         if (root.left == null && root.right == null)
             return Collections.singletonList(String.valueOf(root.val));
 
-        List<List<String>> paths = new ArrayList<>();
-        List<String> visited = new ArrayList<>();
         List<String> result = new ArrayList<>();
 
-        dfs(root, visited, paths);
+        dfs(root, result, "");
 
-        for (List<String> path : paths) {
-            String join = String.join("->", path);
-            result.add(join);
-        }
         return result;
     }
 
-    public void dfs(TreeNode node, List<String> vis, List<List<String>> paths) {
+    public void dfs(TreeNode node, List<String> res, String path) {
 
-        vis.add(String.valueOf(node.val));
 
         if (node.left == null && node.right == null) {
-            paths.add(new ArrayList<>(vis));
+            res.add(path + node.val);
             return;
         }
 
+        path = path + node.val;
+
         if (node.left != null) {
-            dfs(node.left, vis, paths);
-            vis.remove(vis.size() - 1);
-
+            dfs(node.left, res, path + "->");
         }
+
         if (node.right != null) {
-            dfs(node.right, vis, paths);
-            vis.remove(vis.size() - 1);
-
+            dfs(node.right, res, path + "->");
         }
+
     }
 }
