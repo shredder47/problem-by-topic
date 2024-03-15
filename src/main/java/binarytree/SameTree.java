@@ -1,6 +1,7 @@
 package binarytree;
 
 public class SameTree {
+    //https://leetcode.com/problems/same-tree/description/
 
     public boolean isSameTree(TreeNode p, TreeNode q) {
 

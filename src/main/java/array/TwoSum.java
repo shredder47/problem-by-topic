@@ -35,6 +35,7 @@ public class TwoSum {
             }else{
                 targetNumIndex[0] = numberToIndexMap.get(reqNumber);
                 targetNumIndex[1] = i;
+                return targetNumIndex;
             }
         }
         return targetNumIndex;

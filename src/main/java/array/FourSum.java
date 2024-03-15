@@ -50,7 +50,7 @@ public class FourSum {
 
         Set<List<Integer>> quads = new HashSet<>();
 
-        while (i < end) {
+        while (i < end - 2) {
 
             int L = i + 1;
             int R = end - 1;
