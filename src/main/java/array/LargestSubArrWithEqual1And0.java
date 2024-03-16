@@ -14,19 +14,21 @@ import java.util.HashMap;
  */
 public class LargestSubArrWithEqual1And0 {
 
-    int maxLen(int[] A, int n) {
+    //https://leetcode.com/problems/contiguous-array/description/
+
+    public int findMaxLength(int[] nums) {
 
         HashMap<Integer, Integer> cumSumToIndex = new HashMap<>();
         int maxLength = 0;
         int cumSum = 0;
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < nums.length; i++) {
 
             //consider all 0s as -1
-            if (A[i] == 0) {
+            if (nums[i] == 0) {
                 cumSum = cumSum + (-1);
             } else {
-                cumSum = cumSum + A[i];
+                cumSum = cumSum + nums[i];
             }
 
             if (cumSum == 0) {

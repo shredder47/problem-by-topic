@@ -13,7 +13,7 @@ public class LargestSubArrWithEqual1And0Test {
 
         int[] arr = new int[]{1,1,0,1,1,0,0};
 
-        Assert.assertEquals(6, z.maxLen(arr, arr.length));
+        Assert.assertEquals(6, z.findMaxLength(arr));
 
     }
 
