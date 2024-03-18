@@ -34,7 +34,7 @@ public class RemoveNthNodeFromEndOfLinkedList {
         if(fast == null ) return head.next;
 
         //move one by one
-        while (fast.next != null){
+        while (fast != null && fast.next != null){
             slow = slow.next;
             fast = fast.next;
         }
