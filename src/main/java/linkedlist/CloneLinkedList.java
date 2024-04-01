@@ -20,28 +20,4 @@ public class CloneLinkedList {
         return dummy.next;
     }
 
-    private static void printLinkedListItems(ListNode head){
-
-        while (head != null){
-            System.out.println(head.val);
-            head = head.next;
-        }
-
-    }
-
-
-    public static void main(String[] args) {
-
-        ListNode head = new ListNode(0);
-        head.next = new ListNode(1);
-        head.next.next = new ListNode(2);
-        head.next.next.next = new ListNode(3);
-        head.next.next.next.next = new ListNode(4);
-
-       // printLinkedListItems(head);
-        ListNode clone = clone(head);
-        printLinkedListItems(clone);
-
-
-    }
 }

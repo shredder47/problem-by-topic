@@ -49,14 +49,8 @@ public class GroupAnagram {
             }
         }
 
-
         return new ArrayList<>(keyToWords.values());
     }
 
 
-    public static void main(String[] args) {
-
-        String[] strings = {"abbbbbbbbbbb", "aaaaaaaaaaab"};
-        System.out.println(groupAnagrams(strings));
-    }
 }
